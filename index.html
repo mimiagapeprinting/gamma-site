@@ -1,194 +1,147 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gamma Care Branded Ordering Portal</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gamma Care Ordering Portal</title>
+
 <style>
-:root{--blue:#1557a7;--navy:#163c66;--teal:#36c3cf;--bg:#f4f6f8;--text:#243444;--muted:#6a7682;--line:#d9e1e7;}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
-.wrap{max-width:1180px;margin:0 auto;padding:0 18px}section{padding:40px 0}
-.hero{background:linear-gradient(180deg,#fff 0%, #eef4f9 100%);border-bottom:1px solid var(--line)}
-.hero-grid{display:grid;grid-template-columns:1fr;gap:22px;align-items:start;padding:34px 0}
-.hero-copy{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:0 10px 28px rgba(22,60,102,.08)}
-.badge{display:inline-block;padding:8px 12px;border-radius:999px;background:#e9fbfd;color:#127780;font-weight:700;font-size:13px;margin-bottom:12px}
-h1{margin:0 0 12px;font-size:44px;line-height:1.05;color:var(--navy)} .sub{margin:0 0 20px;color:var(--muted);font-size:18px;line-height:1.5}
-.hero-actions a{display:inline-block;padding:13px 18px;border-radius:12px;text-decoration:none;font-weight:700;margin-right:10px;margin-bottom:10px}
-.primary{background:var(--teal);color:#fff} .secondary{background:#fff;color:var(--blue);border:2px solid var(--blue)}
-.hero-showcase img{width:100%;height:420px;border-radius:20px;display:block;border:1px solid var(--line);object-fit:cover;object-position:center center;background:#fff}
-.head{display:flex;justify-content:space-between;gap:16px;align-items:end;margin-bottom:18px;flex-wrap:wrap}
-h2{margin:0;font-size:32px;color:var(--navy)} .p{margin:0;color:var(--muted);line-height:1.5;max-width:760px}
-.feature-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
-.feature,.card,.form{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 8px 22px rgba(22,60,102,.05)}
-.feature img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover} .cap{padding:14px 16px 18px}
-.k{font-size:12px;font-weight:700;color:#127780;text-transform:uppercase;letter-spacing:.04em} .cap h3{margin:6px 0;font-size:20px} .cap p{margin:0;color:var(--muted);line-height:1.45;font-size:14px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card img{width:100%;display:block;aspect-ratio:1/1;object-fit:contain;background:#fff;padding:10px}
-.card-body{padding:14px} .title{font-weight:800;font-size:18px;margin-bottom:6px}
-.desc{color:var(--muted);font-size:14px;line-height:1.45;min-height:40px} .qty-row{margin-top:12px;display:flex;align-items:center;gap:10px} .qty-row input{width:80px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font-size:15px}
-.note{background:#fff8e7;border:1px solid #f0ddb1;color:#7a5a12;border-radius:14px;padding:14px 16px;margin:18px 0 0}
-.form{padding:22px;border-radius:22px;box-shadow:0 10px 28px rgba(22,60,102,.06)} .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.field,.field-full{display:flex;flex-direction:column;gap:8px} .field-full{grid-column:1/-1} label{font-size:14px;font-weight:700}
-input[type=text],input[type=email],textarea{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:12px;font-size:15px;font-family:inherit} textarea{min-height:120px;resize:vertical}
-.submit{display:inline-block;background:var(--blue);color:#fff;border:none;border-radius:12px;padding:14px 18px;font-size:16px;font-weight:700}
-.footer{text-align:center;color:var(--muted);padding:24px 0 40px}
-@media (max-width:900px){.feature-grid,.grid,.form-grid{grid-template-columns:1fr 1fr}.hero-showcase img{height:320px}}
-@media (max-width:640px){h1{font-size:34px}h2{font-size:26px}.feature-grid,.grid,.form-grid{grid-template-columns:1fr}section{padding:28px 0}.hero-showcase img{height:240px}}
-</style></head>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f7f9fc;
+}
+
+.hero {
+  background: #1f4e79;
+  color: white;
+  padding: 40px;
+  text-align: center;
+}
+
+.wrap {
+  padding: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+h2 {
+  margin-top: 40px;
+}
+
+input {
+  width: 60px;
+  padding: 6px;
+}
+</style>
+</head>
+
 <body>
-<header class="hero"><div class="wrap hero-grid">
-<div class="hero-copy"><span class="badge">Gamma Care branded ordering portal</span><h1>Order official Gamma Care materials</h1>
-<p class="sub">Select items, enter quantities, and submit one request for approval. This page is designed for Agape Printing Plus to manage Gamma Care branded materials in one place.</p>
-<div class="hero-actions"><a href="#products" class="primary">Start order</a><a href="#form" class="secondary">Go to request form</a></div></div>
-<div class="hero-showcase"><img src="hero_office.jpeg" alt="Gamma Care office hero"></div></div></header>
 
-<section class="wrap"><div class="head"><div><span class="badge">Featured</span><h2>High-visibility event items</h2></div>
-<p class="p">Use these larger display items for conferences, outreach tables, recruiting events, and branded presentations.</p></div>
-<div class="feature-grid">
-<div class="feature"><img src="curved_backdrop.jpeg" alt="Curved backdrop"><div class="cap"><div class="k">Display</div><h3>Curved Backdrop</h3><p>Clean event backdrop with repeating Gamma Care branding.</p></div></div>
-<div class="feature"><img src="step_repeat.jpeg" alt="Step and repeat backdrop"><div class="cap"><div class="k">Display</div><h3>Step & Repeat Backdrop</h3><p>Straight frame backdrop for photos, booths, and events.</p></div></div>
-<div class="feature"><img src="umbrella.jpeg" alt="Gamma Care umbrella"><div class="cap"><div class="k">Promo</div><h3>Branded Umbrella</h3><p>High-visibility practical giveaway in Gamma Care colors.</p></div></div>
-</div></section>
+<div class="hero">
+  <h1>Order Official Gamma Care Materials</h1>
+  <p>Select items and enter quantities</p>
+</div>
 
-<section id="products" class="wrap"><div class="head"><div><span class="badge">Order items</span><h2>Product selection</h2></div>
-<p class="p">Review the item image, enter quantity, and continue down the page. This version is designed so people choose visually instead of guessing product names.</p></div>
-<div class="grid"><article class="card">
-<img src="business_cards.png" alt="Business Cards">
-<div class="card-body">
-<div class="title">Business Cards</div>
-<div class="desc">Professional front-and-back branded cards for staff.</div>
-<div class="qty-row"><label>Qty</label><input type="number" min="0" value="0"></div>
-</div></article>
-<article class="card">
-<img src="id_wallet.jpeg" alt="PVC ID Wallets">
-<div class="card-body">
-<div class="title">PVC ID Wallets</div>
-<div class="desc">Clear ID holders for badges and daily use.</div>
-<div class="qty-row"><label>Qty</label><input type="number" min="0" value="0"></div>
-</div></article>
-<article class="card">
-<img src="images/pens.jpeg" alt="Pens">
-<div class="card-body">
-<div class="title">Pens</div>
-<div class="desc">Branded pens for office and outreach.</div>
-<div class="qty-row"><label>Qty</label><input type="number" min="0" value="0"></div>
-</div></article>
-<article class="card">
-<img src="images/notepads.jpeg" alt="Notepads">
-<div class="card-body">
-<div class="title">Notepads</div>
-<div class="desc">Clean notepads for consultations and meetings.</div>
-<div class="qty-row"><label>Qty</label><input type="number" min="0" value="0"></div>
-</div></article>
-<article class="card">
-<img src="images/mugs.jpeg" alt="Mugs">
-<div class="card-body">
-<div class="title">Mugs</div>
-<div class="desc">Ceramic mugs in white and navy.</div>
-<div class="qty-row"><label>Qty</label><input type="number" min="0" value="0"></div>
-</div></article>
-<article class="card">
-<img src="images/umbrella.jpeg" alt="Umbrella">
-<div class="card-body">
-<div class="title">Umbrella</div>
-<div class="desc">Branded umbrella for outreach and rainy days.</div>
-<div class="qty-row"><label>Qty</label><input type="number" min="0" value="0"></div>
-</div></article>
-<article class="card">
-<img src="images/magnifier.jpeg" alt="Mini Magnifier with Light">
-<div class="card-body">
-<div class="title">Mini Magnifier with Light</div>
-<div class="desc">Portable magnifier with built-in light.</div>
-<div class="qty-row"><label>Qty</label><input type="number" min="0" value="0"></div>
-</div></article>
-<article class="card">
-<img src="images/pill_box.jpeg" alt="Pill Box">
-<div class="card-body">
-<div class="title">Pill Box</div>
-<div class="desc">Compact organizer for daily medications.</div>
-<div class="qty-row"><label>Qty</label><input type="number" min="0" value="0"></div>
-</div></article>
-<article class="card">
-<img src="images/stress_manicure.jpeg" alt="Stress Ball & Manicure Set">
-<div class="card-body">
-<div class="title">Stress Ball & Manicure Set</div>
-<div class="desc">Wellness giveaway pair.</div>
-<div class="qty-row"><label>Qty</label><input type="number" min="0" value="0"></div>
-</div></article>
-<article class="card">
-<img src="images/tote_bags.jpeg" alt="Tote Bags">
-<div class="card-body">
-<div class="title">Tote Bags</div>
-<div class="desc">Branded carry bags in cream and navy.</div>
-<div class="qty-row"><label>Qty</label><input type="number" min="0" value="0"></div>
-</div></article>
-<article class="card">
-<img src="images/tech_golf.jpeg" alt="Power Bank / Charger / Golf Balls">
-<div class="card-body">
-<div class="title">Power Bank / Charger / Golf Balls</div>
-<div class="desc">Tech and giveaway bundle.</div>
-<div class="qty-row"><label>Qty</label><input type="number" min="0" value="0"></div>
-</div></article>
-<article class="card">
-<img src="images/polo.jpeg" alt="Polo Shirts">
-<div class="card-body">
-<div class="title">Polo Shirts</div>
-<div class="desc">Three branded polo color options.</div>
-<div class="qty-row"><label>Qty</label><input type="number" min="0" value="0"></div>
-</div></article>
-<article class="card">
-<img src="images/jackets.jpeg" alt="Softshell Jackets">
-<div class="card-body">
-<div class="title">Softshell Jackets</div>
-<div class="desc">Lightweight zip jackets.</div>
-<div class="qty-row"><label>Qty</label><input type="number" min="0" value="0"></div>
-</div></article>
-<article class="card">
-<img src="images/caps.jpeg" alt="Caps">
-<div class="card-body">
-<div class="title">Caps</div>
-<div class="desc">White and navy baseball caps.</div>
-<div class="qty-row"><label>Qty</label><input type="number" min="0" value="0"></div>
-</div></article>
-<article class="card">
-<img src="images/beanies.jpeg" alt="Beanies">
-<div class="card-body">
-<div class="title">Beanies</div>
-<div class="desc">Gray and navy knit beanies.</div>
-<div class="qty-row"><label>Qty</label><input type="number" min="0" value="0"></div>
-</div></article>
-<article class="card">
-<img src="images/tshirts.jpeg" alt="T-Shirts">
-<div class="card-body">
-<div class="title">T-Shirts</div>
-<div class="desc">White and navy branded tees.</div>
-<div class="qty-row"><label>Qty</label><input type="number" min="0" value="0"></div>
-</div></article>
-<article class="card">
-<img src="images/curved_backdrop.jpeg" alt="Curved Backdrop">
-<div class="card-body">
-<div class="title">Curved Backdrop</div>
-<div class="desc">Display backdrop for events.</div>
-<div class="qty-row"><label>Qty</label><input type="number" min="0" value="0"></div>
-</div></article>
-<article class="card">
-<img src="images/step_repeat.jpeg" alt="Step & Repeat Backdrop">
-<div class="card-body">
-<div class="title">Step & Repeat Backdrop</div>
-<div class="desc">Straight backdrop with repeating logo pattern.</div>
-<div class="qty-row"><label>Qty</label><input type="number" min="0" value="0"></div>
-</div></article></div>
-<div class="note"><strong>Helpful tip:</strong> Use this as your visual ordering page, then keep your final approval workflow underneath or in Wix forms.</div>
-</section>
+<div class="wrap">
 
-<section id="form" class="wrap"><div class="head"><div><span class="badge">Request form</span><h2>Submit your order request</h2></div>
-<p class="p">Use this section for your contact information and special notes. Approved requests move to production after review.</p></div>
-<div class="form"><div class="form-grid">
-<div class="field"><label>Full Name</label><input type="text" placeholder="Enter your name"></div>
-<div class="field"><label>Email</label><input type="email" placeholder="Enter your email"></div>
-<div class="field"><label>Phone</label><input type="text" placeholder="Enter your phone"></div>
-<div class="field"><label>Department / Location</label><input type="text" placeholder="Department or location"></div>
-<div class="field-full"><label>Order Details</label><textarea placeholder="Example: Business Cards – 250, Polo Shirts – 20, Caps – 10"></textarea></div>
-<div class="field-full"><label>Additional Notes</label><textarea placeholder="Add names, title changes, event dates, or special instructions"></textarea></div>
-<div class="field-full"><button class="submit">Submit for Approval</button></div>
-</div></div></section>
+  <h2>Product Selection</h2>
 
-<div class="footer wrap">Powered by Agape Printing Plus</div>
-</body></html>
+  <div class="grid">
+
+    <div class="card">
+      <img src="business_cards.png">
+      <h3>Business Cards</h3>
+      Qty <input type="number">
+    </div>
+
+    <div class="card">
+      <img src="id_wallet.jpeg">
+      <h3>PVC ID Wallets</h3>
+      Qty <input type="number">
+    </div>
+
+    <div class="card">
+      <img src="pens.jpeg">
+      <h3>Pens</h3>
+      Qty <input type="number">
+    </div>
+
+    <div class="card">
+      <img src="notepads.jpeg">
+      <h3>Notepads</h3>
+      Qty <input type="number">
+    </div>
+
+    <div class="card">
+      <img src="mugs.jpeg">
+      <h3>Mugs</h3>
+      Qty <input type="number">
+    </div>
+
+    <div class="card">
+      <img src="umbrella.jpeg">
+      <h3>Umbrella</h3>
+      Qty <input type="number">
+    </div>
+
+    <div class="card">
+      <img src="powerbank.jpeg">
+      <h3>Power Bank</h3>
+      Qty <input type="number">
+    </div>
+
+    <div class="card">
+      <img src="tote.jpeg">
+      <h3>Tote Bags</h3>
+      Qty <input type="number">
+    </div>
+
+    <div class="card">
+      <img src="shirts.jpeg">
+      <h3>Polos</h3>
+      Qty <input type="number">
+    </div>
+
+    <div class="card">
+      <img src="jackets.jpeg">
+      <h3>Jackets</h3>
+      Qty <input type="number">
+    </div>
+
+    <div class="card">
+      <img src="caps.jpeg">
+      <h3>Caps</h3>
+      Qty <input type="number">
+    </div>
+
+    <div class="card">
+      <img src="beanies.jpeg">
+      <h3>Beanies</h3>
+      Qty <input type="number">
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
